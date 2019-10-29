@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ASCII"?>
+<diagram:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:diagram="http://osate.org/diagram" formatVersion="7">
+  <element uuid="621d4aab-e8b0-4daf-a8d5-52ce61af8182" manual="true">
+    <element uuid="1f75be7c-5aad-4dda-935f-0b45e30c0ee7">
+      <bo>
+        <seg>classifier</seg>
+        <seg>ha</seg>
+      </bo>
+      <position x="248.0" y="93.0"/>
+      <size width="74.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="59358d2b-268e-4257-aee0-97ec1f90422e">
+      <element uuid="ebb05f30-d2e4-44bf-8f66-c8a6e2b7716a">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="191.0" y="122.5"/>
+          <point x="203.0" y="122.5"/>
+        </bendpoints>
+        <contentFilters/>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>ha.i</seg>
+      </bo>
+      <position x="88.0" y="93.0"/>
+      <size width="87.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="0f913a79-49f4-43bf-8ae1-f00f66260eb1">
+      <bo>
+        <seg>classifier</seg>
+        <seg>p</seg>
+      </bo>
+      <position x="141.0" y="38.0"/>
+      <size width="63.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <bo>
+      <seg>package</seg>
+      <seg>homeautomation</seg>
+    </bo>
+    <position x="12.0" y="12.0"/>
+    <size width="334.0" height="140.0"/>
+    <contentFilters>
+      <filter>classifiers</filter>
+    </contentFilters>
+  </element>
+  <config type="package" connectionPrimaryLabelsVisible="false">
+    <enabledAadlProperties/>
+    <context>
+      <seg>package</seg>
+      <seg>homeautomation</seg>
+    </context>
+  </config>
+</diagram:Diagram>

@@ -1,0 +1,184 @@
+package HomeAutomation
+public
+	with Base_Types, Data_Model;
+	  
+	system HA
+    end HA;
+
+    system implementation HA.i
+        subcomponents
+            proc: process p;
+    end HA.i;
+    
+    process p
+    end p;
+    
+    -- Now, declare the virtual processors that model
+	-- partition runtime.
+	
+	processor cpu1
+		properties
+			Clock_Period => 1ns;
+			Scheduling_Protocol => (Round_Robin_Protocol);
+	      	Thread_Swap_Execution_Time => 5 us.. 10 us;
+	      	Clock_Jitter => 5 ps;
+	end cpu1;
+	
+	processor cpu2
+		properties
+		Clock_Period => 1ns;
+	    Scheduling_Protocol => (Round_Robin_Protocol);
+	    Thread_Swap_Execution_Time => 5 us.. 10 us;
+	    Clock_Jitter => 5 ps;
+	      
+	end cpu2;
+	
+	processor cpu3
+		properties
+		  Clock_Period => 1ns;
+	      Scheduling_Protocol => (Round_Robin_Protocol);
+	      Thread_Swap_Execution_Time => 5 us.. 10 us;
+	      Clock_Jitter => 5 ps;
+	      
+	end cpu3;
+	
+	processor cpu4
+		properties
+			Clock_Period => 1ns;
+			Scheduling_Protocol => (Round_Robin_Protocol);
+	      	Thread_Swap_Execution_Time => 5 us.. 10 us;
+	      	Clock_Jitter => 5 ps;
+	      
+	end cpu4;
+	
+	processor cpu5
+		properties
+			Clock_Period => 1ns;
+			Scheduling_Protocol => (Round_Robin_Protocol);
+	      	Thread_Swap_Execution_Time => 5 us.. 10 us;
+	      	Clock_Jitter => 5 ps;
+	      
+	end cpu5;
+	
+	bus bus1
+	properties
+		 Transmission_Time => [Fixed => 1ms .. 2ms; PerByte=> 1ms .. 2ms;];
+	end bus1;
+	
+	thread HostController_PeriodicOp
+	features
+    	Temp: in event data port Temperature;
+    	Humid: in event data port Temperature;
+	properties
+	   Priority => 10;
+	   Period => 1000 ms;
+	   Compute_Execution_Time => 8 ms .. 10 ms;
+	   Deadline => 1000 ms; 
+	   Dispatch_Protocol => Periodic;
+	end HostController_PeriodicOp;
+	
+	thread implementation   HostController_PeriodicOp.impl
+	end                     HostController_PeriodicOp.impl;
+
+	thread HumidSensor_Step
+	features
+    	Humid_out: out event data port Humidity;
+    	Humid_in: in event data port Humidity;
+	properties
+	   Priority => 10;
+	   Period => 1000 ms;
+	   Compute_Execution_Time => 1ms .. 1ms;
+	   Deadline => 1000 ms; 
+	   Dispatch_Protocol => Periodic;
+	end HumidSensor_Step;
+	
+	thread implementation   HumidSensor_Step.impl
+	end                     HumidSensor_Step.impl;
+	
+	thread TemperatureSensor_Step
+	features
+    	Temp_in: in event data port Temperature;
+     	Temp_out: in event data port Temperature;
+	properties
+	   Priority => 10;
+	   Period => 1000 ms;
+	   Compute_Execution_Time => 1ms .. 1ms;
+	   Deadline => 1000 ms; 
+	   Dispatch_Protocol => Periodic;
+	end TemperatureSensor_Step;
+	
+	thread implementation   TemperatureSensor_Step.impl
+	end                     TemperatureSensor_Step.impl;
+	
+	thread Thermostat_Step
+	features
+	  TermostatCmd : in event data port TermostatCMD;
+	  TermostatAct : out event data port TermostatCMD;
+	properties
+	   Priority => 10;
+	   Period => 1000 ms;
+	   Compute_Execution_Time => 1ms .. 1ms;
+	   Deadline => 1000 ms; 
+	   Dispatch_Protocol => Periodic;
+	end Thermostat_Step;
+	
+	thread implementation   Thermostat_Step.impl
+	end                     Thermostat_Step.impl;
+	
+	thread Window_Step
+	features
+	  windowCmd : in event data port WinCMD;
+	  windowAct : out event port;
+	 properties
+	   Priority => 10;
+	   Period => 1000 ms;
+	   Compute_Execution_Time => 1ms .. 1ms;
+	   Deadline => 1000 ms; 
+	   Dispatch_Protocol => Periodic;
+	end Window_Step;
+	
+	thread implementation   Window_Step.impl
+	end                     Window_Step.impl;
+	
+	thread Environment_CreateSignal
+	properties
+	   Priority => 10;
+	   Period => 1000 ms;
+	   Compute_Execution_Time => 0ns .. 1ns;
+	   Deadline => 1000 ms; 
+	   Dispatch_Protocol => Periodic;
+	end Environment_CreateSignal;
+	
+	thread implementation   Environment_CreateSignal.impl
+	end                     Environment_CreateSignal.impl;
+	
+data WinCmd
+  properties
+    Data_Model::Data_Representation => Enum;
+    Data_Model::Enumerators => ("OPEN", "CLOSE");
+end WinCmd;
+
+
+data TermostatCMD
+  properties
+    Data_Model::Data_Representation => Enum;
+    Data_Model::Enumerators => ("INC", "DEC");
+end TermostatCMD;
+
+data Temperature
+  properties
+    Data_Model::Data_Representation => Struct;
+    Data_Model::Element_Names =>
+      ("degrees",
+       "unit"
+      );
+    Data_Model::Base_Type =>
+      ( classifier(Base_Types::Float));
+end Temperature;
+
+data Humidity
+  properties
+    Data_Model::Base_Type =>( classifier(Base_Types::Float));
+end Humidity;
+
+end HomeAutomation;
