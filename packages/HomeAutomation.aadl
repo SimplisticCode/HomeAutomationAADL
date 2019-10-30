@@ -5,25 +5,45 @@ public
 	system HA
     end HA;
 
-    system implementation HA.i
+    system implementation HA.impl
         subcomponents
-            proc: process p;
-    end HA.i;
-    
-    process p
-    end p;
+            humid_sensor: device sensor.humid;
+            temp_sensor: device sensor.temp;
+            window: device actuator.Window;
+            termostat: device actuator.Termostat;
+            HA_control: process hostController.PeriodicOp;
+            rt_cpu1 : processor cpu1.exp;
+    	connections
+    		DC1: port temp_sensor.sensor_data -> HA_control.tempValue;
+    		DC2: port humid_sensor.sensor_data -> HA_control.humidValue;    		
+    		DC3: port HA_control.windowCMD -> window.cmd;
+    		DC4: port HA_control.termostatCMD -> termostat.cmd;
+    		
+    	properties
+    		Allowed_Processor_Binding => (reference(rt_cpu1))
+    		applies to HA_control.updateValues;
+    		Allowed_Processor_Binding => (reference(rt_cpu1))
+    		applies to HA_control.algorithm;
+    end HA.impl;
     
     -- Now, declare the virtual processors that model
 	-- partition runtime.
 	
 	-- Freq: 1 * 10^6 and First Come First Serve (Round Robin)
 	processor cpu1
+		features
+			BA1: requires bus access bus1.realBus;
 		properties
 			Clock_Period => 1000ns;
 			Scheduling_Protocol => (Round_Robin_Protocol);
 	      	Thread_Swap_Execution_Time => 5 us.. 10 us; -- Dont know
 	      	Clock_Jitter => 5 ps; -- Dont know
 	end cpu1;
+	
+	processor implementation cpu1.exp	
+	end cpu1.exp;
+	
+	
 	
 	processor cpu2
 		properties
@@ -61,11 +81,64 @@ public
 	      
 	end cpu5;
 	
+	--Bus
 	-- Freq: 1 * 10^3 and First Come First Serve (Round Robin)
 	bus bus1
 	properties
 		 Transmission_Time => [Fixed => 1ms .. 2ms; PerByte=> 1ms .. 2ms;];
 	end bus1;
+	
+	bus implementation bus1.realBus
+	end bus1.realBus;
+	
+	
+	-- Process
+	process hostController
+		features			
+			set_TargetTemp: in data port;
+			set_TargetHumid: in data port; 
+			tempValue: in data port;
+			humidValue: in data port;
+			windowCmd: out data port;
+			termostatCMD: out data port; 
+	end HostController;
+	
+	process implementation hostController.PeriodicOp
+		subcomponents
+			updateValues: thread update_values.env;
+			algorithm: thread algorithm.ex;
+	end hostController.PeriodicOp;	
+	-- Devices
+	
+	--Sensors
+	device sensor
+		features
+		sensor_data: out data port;
+	end sensor;
+	
+	device implementation sensor.temp
+	end sensor.temp;
+	
+	device implementation sensor.humid
+	end sensor.humid;
+	
+	-- Actuators
+	device actuator
+		features
+		cmd: in data port;
+	end actuator;
+	
+	device implementation actuator.Termostat
+	end actuator.Termostat;
+	
+	device implementation actuator.Window
+	end actuator.Window;
+	
+	process implementation HostController.HA
+		
+	end HostController.HA;
+	
+	-- Threads
 	
 	thread HostController_PeriodicOp
 	features
@@ -169,6 +242,7 @@ public
 	thread implementation   Environment_CreateSignal.impl
 	end                     Environment_CreateSignal.impl;
 	
+	--data
 data WinCmd
   properties
     Data_Model::Data_Representation => Enum;
