@@ -16,17 +16,18 @@ public
     -- Now, declare the virtual processors that model
 	-- partition runtime.
 	
+	-- Freq: 1 * 10^6 and First Come First Serve (Round Robin)
 	processor cpu1
 		properties
-			Clock_Period => 1ns;
+			Clock_Period => 1000ns;
 			Scheduling_Protocol => (Round_Robin_Protocol);
-	      	Thread_Swap_Execution_Time => 5 us.. 10 us;
-	      	Clock_Jitter => 5 ps;
+	      	Thread_Swap_Execution_Time => 5 us.. 10 us; -- Dont know
+	      	Clock_Jitter => 5 ps; -- Dont know
 	end cpu1;
 	
 	processor cpu2
 		properties
-		Clock_Period => 1ns;
+			Clock_Period => 1000ns;
 	    Scheduling_Protocol => (Round_Robin_Protocol);
 	    Thread_Swap_Execution_Time => 5 us.. 10 us;
 	    Clock_Jitter => 5 ps;
@@ -35,7 +36,7 @@ public
 	
 	processor cpu3
 		properties
-		  Clock_Period => 1ns;
+			Clock_Period => 1000ns;
 	      Scheduling_Protocol => (Round_Robin_Protocol);
 	      Thread_Swap_Execution_Time => 5 us.. 10 us;
 	      Clock_Jitter => 5 ps;
@@ -44,7 +45,7 @@ public
 	
 	processor cpu4
 		properties
-			Clock_Period => 1ns;
+			Clock_Period => 1000ns;
 			Scheduling_Protocol => (Round_Robin_Protocol);
 	      	Thread_Swap_Execution_Time => 5 us.. 10 us;
 	      	Clock_Jitter => 5 ps;
@@ -53,13 +54,14 @@ public
 	
 	processor cpu5
 		properties
-			Clock_Period => 1ns;
+			Clock_Period => 1000ns;
 			Scheduling_Protocol => (Round_Robin_Protocol);
 	      	Thread_Swap_Execution_Time => 5 us.. 10 us;
 	      	Clock_Jitter => 5 ps;
 	      
 	end cpu5;
 	
+	-- Freq: 1 * 10^3 and First Come First Serve (Round Robin)
 	bus bus1
 	properties
 		 Transmission_Time => [Fixed => 1ms .. 2ms; PerByte=> 1ms .. 2ms;];
@@ -80,6 +82,9 @@ public
 	thread implementation   HostController_PeriodicOp.impl
 	end                     HostController_PeriodicOp.impl;
 
+	-- 1*10^3 Cycles 
+	-- Period 1000 * 10^6
+	-- Deadline same as Period
 	thread HumidSensor_Step
 	features
     	Humid_out: out event data port Humidity;
@@ -95,6 +100,9 @@ public
 	thread implementation   HumidSensor_Step.impl
 	end                     HumidSensor_Step.impl;
 	
+	-- 1*10^3 Cycles 
+	-- Period 1000 * 10^6
+	-- Deadline same as Period
 	thread TemperatureSensor_Step
 	features
     	Temp_in: in event data port Temperature;
@@ -110,6 +118,9 @@ public
 	thread implementation   TemperatureSensor_Step.impl
 	end                     TemperatureSensor_Step.impl;
 	
+	-- 1*10^3 Cycles 
+	-- Period 1000 * 10^6
+	-- Deadline same as Period
 	thread Thermostat_Step
 	features
 	  TermostatCmd : in event data port TermostatCMD;
@@ -125,6 +136,9 @@ public
 	thread implementation   Thermostat_Step.impl
 	end                     Thermostat_Step.impl;
 	
+	-- 1*10^3 Cycles 
+	-- Period 1000 * 10^6
+	-- Deadline same as Period
 	thread Window_Step
 	features
 	  windowCmd : in event data port WinCMD;
@@ -140,6 +154,9 @@ public
 	thread implementation   Window_Step.impl
 	end                     Window_Step.impl;
 	
+	-- No duration
+	-- Period 1000 * 10^6
+	-- Deadline same as Period
 	thread Environment_CreateSignal
 	properties
 	   Priority => 10;
