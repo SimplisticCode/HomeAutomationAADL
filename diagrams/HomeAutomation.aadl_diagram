@@ -1,45 +1,623 @@
 <?xml version="1.0" encoding="ASCII"?>
 <diagram:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:diagram="http://osate.org/diagram" formatVersion="7">
   <element uuid="621d4aab-e8b0-4daf-a8d5-52ce61af8182" manual="true">
-    <element uuid="1f75be7c-5aad-4dda-935f-0b45e30c0ee7">
+    <element uuid="93ff3a90-86c0-4ed1-8239-479ae90929a5">
       <bo>
         <seg>classifier</seg>
-        <seg>ha</seg>
+        <seg>actuator</seg>
       </bo>
-      <position x="248.0" y="93.0"/>
-      <size width="74.0" height="35.0"/>
+      <position x="342.0" y="429.0"/>
+      <size width="112.0" height="35.0"/>
       <contentFilters>
         <filter>generalizations</filter>
       </contentFilters>
     </element>
-    <element uuid="59358d2b-268e-4257-aee0-97ec1f90422e">
-      <element uuid="ebb05f30-d2e4-44bf-8f66-c8a6e2b7716a">
+    <element uuid="c2f84e67-4595-485d-9ce9-d68dc00edfcc" manual="true">
+      <element uuid="b5c9d4eb-3f9d-40c0-9c74-8eb61201fea9">
         <bo>
           <seg>realization</seg>
         </bo>
         <bendpoints>
-          <point x="191.0" y="122.5"/>
-          <point x="203.0" y="122.5"/>
+          <point x="338.0" y="452.5"/>
+          <point x="350.0" y="452.5"/>
         </bendpoints>
         <contentFilters/>
       </element>
       <bo>
         <seg>classifier</seg>
-        <seg>ha.i</seg>
+        <seg>actuator.termostat</seg>
       </bo>
-      <position x="88.0" y="93.0"/>
-      <size width="87.0" height="35.0"/>
+      <position x="141.0" y="423.0"/>
+      <size width="181.0" height="35.0"/>
       <contentFilters>
         <filter>generalizations</filter>
       </contentFilters>
     </element>
-    <element uuid="0f913a79-49f4-43bf-8ae1-f00f66260eb1">
+    <element uuid="ab7093d7-d3c1-48cb-b3dd-0bd0eaf6888e">
+      <element uuid="ef699d0a-add0-484e-bf9f-757a0272e99c">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="338.0" y="507.5"/>
+          <point x="344.0" y="507.5"/>
+          <point x="344.0" y="464.1666666666667"/>
+          <point x="350.0" y="464.16666666666663"/>
+        </bendpoints>
+        <contentFilters/>
+      </element>
       <bo>
         <seg>classifier</seg>
-        <seg>p</seg>
+        <seg>actuator.window</seg>
+      </bo>
+      <position x="157.0" y="478.0"/>
+      <size width="165.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="b33866e7-9a94-4a38-8f44-9289ac60e56f">
+      <bo>
+        <seg>classifier</seg>
+        <seg>algorithm</seg>
+      </bo>
+      <position x="562.0" y="93.0"/>
+      <size width="120.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="008f9829-43d4-43c9-86f0-6f593353cce2">
+      <element uuid="1a505692-8caa-4e33-90b5-a6b0c1373f58">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="558.0" y="122.5"/>
+          <point x="570.0" y="122.5"/>
+        </bendpoints>
+        <contentFilters/>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>algorithm.ex</seg>
+      </bo>
+      <position x="404.0" y="93.0"/>
+      <size width="138.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="bfe12c82-0b65-499c-9c5b-6676131d8e91" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>bus1</seg>
+      </bo>
+      <position x="298.0" y="93.0"/>
+      <size width="86.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="b4959a40-1846-42aa-a33a-63fbb0f54f93" manual="true">
+      <element uuid="807bac8a-594d-4f90-852b-c366e3911d96">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="294.0" y="122.5"/>
+          <point x="306.0" y="122.5"/>
+        </bendpoints>
+        <contentFilters/>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>bus1.realbus</seg>
+      </bo>
+      <position x="141.0" y="93.0"/>
+      <size width="137.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="8d1d43a1-2367-4166-8ae7-2e9c17979e7e">
+      <bo>
+        <seg>classifier</seg>
+        <seg>cpu_1mhz</seg>
+      </bo>
+      <position x="330.0" y="631.0"/>
+      <size width="125.0" height="60.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="b9c508be-16a8-4de0-9309-b5e821e6ceac">
+      <element uuid="852eb878-87fd-4155-a0b5-ed663b373917">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="316.0" y="617.5"/>
+          <point x="322.0" y="617.5"/>
+          <point x="322.0" y="662.5"/>
+          <point x="338.0" y="662.5"/>
+        </bendpoints>
+        <contentFilters/>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>cpu_1mhz.cpu1</seg>
+      </bo>
+      <position x="141.0" y="588.0"/>
+      <size width="159.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="08d534cd-2e37-41f7-a6ca-ed1d929c11a6">
+      <element uuid="3ecee825-21a8-4ae1-9cb2-37fb18c26ab8">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="316.0" y="727.5"/>
+          <point x="322.0" y="727.5"/>
+          <point x="322.0" y="682.5"/>
+          <point x="338.0" y="682.5"/>
+        </bendpoints>
+        <contentFilters/>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>cpu_1mhz.cpu2</seg>
+      </bo>
+      <position x="141.0" y="698.0"/>
+      <size width="159.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="d181cb7d-3026-4cbe-90f4-81f4436244e7">
+      <element uuid="96133b42-281d-4da1-be33-5f91ed07fc9b">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="316.0" y="562.5"/>
+          <point x="332.0" y="562.5"/>
+          <point x="332.0" y="652.5"/>
+          <point x="338.0" y="652.5"/>
+        </bendpoints>
+        <contentFilters/>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>cpu_1mhz.cpu3</seg>
+      </bo>
+      <position x="141.0" y="533.0"/>
+      <size width="159.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="f2296638-bbb9-49a8-9f8b-089cd1caa134">
+      <element uuid="1beadca2-28d0-4cfc-ba0f-2a0f3aab55c0">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="316.0" y="672.5"/>
+          <point x="338.0" y="672.5"/>
+        </bendpoints>
+        <contentFilters/>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>cpu_1mhz.cpu4</seg>
+      </bo>
+      <position x="141.0" y="643.0"/>
+      <size width="159.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="f5042a18-eed7-455f-a1ed-8b8da376f9b0">
+      <element uuid="802430ea-0bf7-4e2a-9422-e6db192a002a">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="316.0" y="782.5"/>
+          <point x="332.0" y="782.5"/>
+          <point x="332.0" y="692.5"/>
+          <point x="338.0" y="692.5"/>
+        </bendpoints>
+        <contentFilters/>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>cpu_1mhz.cpu5</seg>
+      </bo>
+      <position x="141.0" y="753.0"/>
+      <size width="159.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="58ac69b6-e161-45ab-8342-36b9e7566a1c">
+      <bo>
+        <seg>classifier</seg>
+        <seg>environment_createsignal</seg>
+      </bo>
+      <position x="427.0" y="313.0"/>
+      <size width="231.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="3fef861f-c6df-4b70-95aa-a23edbf3570e">
+      <element uuid="bb780392-2237-4e1a-88fa-d0ce59139ebd">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="423.0" y="342.5"/>
+          <point x="435.0" y="342.5"/>
+        </bendpoints>
+        <contentFilters/>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>environment_createsignal.impl</seg>
+      </bo>
+      <position x="141.0" y="313.0"/>
+      <size width="266.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="1f75be7c-5aad-4dda-935f-0b45e30c0ee7">
+      <bo>
+        <seg>classifier</seg>
+        <seg>ha</seg>
+      </bo>
+      <position x="850.0" y="38.0"/>
+      <size width="74.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="192fbb4c-1d03-4c7a-a114-76773502ef93">
+      <element uuid="c5ecc62a-b628-439d-9cd6-b592ee639bff">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="846.0" y="67.5"/>
+          <point x="858.0" y="67.5"/>
+        </bendpoints>
+        <contentFilters/>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>ha.impl</seg>
+      </bo>
+      <position x="720.0" y="38.0"/>
+      <size width="110.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="3c35c77e-9d23-43c9-b5ab-1d78b4defe08">
+      <bo>
+        <seg>classifier</seg>
+        <seg>hostcontroller</seg>
+      </bo>
+      <position x="727.0" y="429.0"/>
+      <size width="150.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="bbbd1f58-3592-4adf-a0ae-346f74b3bc3f">
+      <element uuid="31568173-293f-46a9-b510-f096ec3297c7">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="723.0" y="507.5"/>
+          <point x="729.0" y="507.5"/>
+          <point x="729.0" y="464.1666666666667"/>
+          <point x="735.0" y="464.16666666666663"/>
+        </bendpoints>
+        <contentFilters/>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>hostcontroller.ha</seg>
+      </bo>
+      <position x="531.0" y="478.0"/>
+      <size width="176.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="f5396b1e-090b-47f0-a6ca-62a36bcce72b">
+      <element uuid="3b411276-1b53-4dc5-b5f8-493fb2cb2100">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="723.0" y="452.5"/>
+          <point x="735.0" y="452.5"/>
+        </bendpoints>
+        <contentFilters/>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>hostcontroller.periodicop</seg>
+      </bo>
+      <position x="474.0" y="423.0"/>
+      <size width="233.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="4473a508-0299-4097-ab73-07fcf1131c49" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>humidity</seg>
+      </bo>
+      <position x="269.0" y="38.0"/>
+      <size width="111.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="33874637-cd8c-4558-8274-4bcd13686f90">
+      <bo>
+        <seg>classifier</seg>
+        <seg>humidsensor_step</seg>
+      </bo>
+      <position x="790.0" y="203.0"/>
+      <size width="182.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="4050105f-8517-4406-baaa-ae6704980949">
+      <element uuid="7becd60a-5c2d-469d-9041-3b17993cca35">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="786.0" y="232.5"/>
+          <point x="798.0" y="232.5"/>
+        </bendpoints>
+        <contentFilters/>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>humidsensor_step.impl</seg>
+      </bo>
+      <position x="552.0" y="203.0"/>
+      <size width="218.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="61a85b18-cbf6-49ae-a58e-cff3129d3f97">
+      <bo>
+        <seg>classifier</seg>
+        <seg>sensor</seg>
+      </bo>
+      <position x="843.0" y="319.0"/>
+      <size width="103.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="a619e06e-4b90-46f2-a69b-569a125552b0">
+      <element uuid="e9c6a929-501b-4c0b-8f5d-c7cd6af27d73">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="839.0" y="397.5"/>
+          <point x="845.0" y="397.5"/>
+          <point x="845.0" y="354.1666666666667"/>
+          <point x="851.0" y="354.16666666666663"/>
+        </bendpoints>
+        <contentFilters/>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>sensor.humid</seg>
+      </bo>
+      <position x="678.0" y="368.0"/>
+      <size width="145.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="ec071272-ebf4-43b5-9e21-2621976b2f8e">
+      <element uuid="f404c72c-bced-4819-bc19-2ef539ae2d0a">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="839.0" y="342.5"/>
+          <point x="851.0" y="342.5"/>
+        </bendpoints>
+        <contentFilters/>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>sensor.temp</seg>
+      </bo>
+      <position x="686.0" y="313.0"/>
+      <size width="137.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="d810b427-00a8-47ba-af13-4b9570dc72e1" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>temperature</seg>
+      </bo>
+      <position x="400.0" y="38.0"/>
+      <size width="133.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="03ff4cda-2dc3-401b-afeb-4be3de05339a">
+      <bo>
+        <seg>classifier</seg>
+        <seg>temperaturesensor_step</seg>
+      </bo>
+      <position x="422.0" y="258.0"/>
+      <size width="226.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="ff8d952c-9f95-47a1-ab0f-d04d206b3a43">
+      <element uuid="907c2834-70f7-4bb0-854f-359ecc6da8ae">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="418.0" y="287.5"/>
+          <point x="430.0" y="287.5"/>
+        </bendpoints>
+        <contentFilters/>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>temperaturesensor_step.impl</seg>
+      </bo>
+      <position x="141.0" y="258.0"/>
+      <size width="261.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="62c102f2-dfd9-472f-ae1e-2e42d5725a87" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>termostatcmd</seg>
+      </bo>
+      <position x="553.0" y="38.0"/>
+      <size width="147.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="bc208c45-f74b-4f0d-9956-5fa96d19cdf6">
+      <bo>
+        <seg>classifier</seg>
+        <seg>thermostat_step</seg>
+      </bo>
+      <position x="364.0" y="203.0"/>
+      <size width="168.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="d4eb32af-c6e4-4942-860b-e7314ec0f0ed">
+      <element uuid="0d1cc861-7dd8-47e8-aed0-b9ee27c5b4f4">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="360.0" y="232.5"/>
+          <point x="372.0" y="232.5"/>
+        </bendpoints>
+        <contentFilters/>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>thermostat_step.impl</seg>
+      </bo>
+      <position x="141.0" y="203.0"/>
+      <size width="203.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="cb308c16-12df-4b13-84ac-8a0ac7bbd0ab">
+      <bo>
+        <seg>classifier</seg>
+        <seg>update_values</seg>
+      </bo>
+      <position x="705.0" y="148.0"/>
+      <size width="151.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="70686525-d885-436a-8424-9cc0c580a606">
+      <element uuid="dc7d08af-4b1a-459f-9aa9-0912679211c6">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="701.0" y="177.5"/>
+          <point x="713.0" y="177.5"/>
+        </bendpoints>
+        <contentFilters/>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>update_values.env</seg>
+      </bo>
+      <position x="505.0" y="148.0"/>
+      <size width="180.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="35f16f5d-cce6-40e1-9416-1da0371cd449" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>wincmd</seg>
       </bo>
       <position x="141.0" y="38.0"/>
-      <size width="63.0" height="35.0"/>
+      <size width="108.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="665b31f0-40b9-4fd6-9a2c-8447812e0085">
+      <bo>
+        <seg>classifier</seg>
+        <seg>window_step</seg>
+      </bo>
+      <position x="339.0" y="148.0"/>
+      <size width="146.0" height="35.0"/>
+      <contentFilters>
+        <filter>generalizations</filter>
+      </contentFilters>
+    </element>
+    <element uuid="bc6bc3e5-9035-4d34-95f4-eceda8f6b542">
+      <element uuid="8ec8f234-e16c-4362-9543-fff06d21887d">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="335.0" y="177.5"/>
+          <point x="347.0" y="177.5"/>
+        </bendpoints>
+        <contentFilters/>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>window_step.impl</seg>
+      </bo>
+      <position x="141.0" y="148.0"/>
+      <size width="178.0" height="35.0"/>
       <contentFilters>
         <filter>generalizations</filter>
       </contentFilters>
@@ -49,7 +627,7 @@
       <seg>homeautomation</seg>
     </bo>
     <position x="12.0" y="12.0"/>
-    <size width="334.0" height="140.0"/>
+    <size width="984.0" height="800.0"/>
     <contentFilters>
       <filter>classifiers</filter>
     </contentFilters>

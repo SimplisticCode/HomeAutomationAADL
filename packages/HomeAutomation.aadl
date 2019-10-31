@@ -12,25 +12,44 @@ public
             window: device actuator.Window;
             termostat: device actuator.Termostat;
             HA_control: process hostController.PeriodicOp;
-            rt_cpu1 : processor cpu1.exp;
+           
+            cpu1 : processor cpu_1MHz.cpu1;
+            cpu2 : processor cpu_1MHz.cpu2;
+            cpu3 : processor cpu_1MHz.cpu3;
+            cpu4 : processor cpu_1MHz.cpu4;
+            cpu5 : processor cpu_1MHz.cpu5;       
+            bus_1 : bus bus1.realBus;          
+            
     	connections
     		DC1: port temp_sensor.sensor_data -> HA_control.tempValue;
     		DC2: port humid_sensor.sensor_data -> HA_control.humidValue;    		
     		DC3: port HA_control.windowCMD -> window.cmd;
     		DC4: port HA_control.termostatCMD -> termostat.cmd;
-    		
+    		 		
+    		BAC1 : bus access bus_1 <-> cpu1.BA1;
+    		BAC2 : bus access bus_1 <-> cpu2.BA1;
+    		BAC3 : bus access bus_1 <-> cpu3.BA1;
+    		BAC4 : bus access bus_1 <-> cpu4.BA1;
+    		BAC5 : bus access bus_1 <-> cpu5.BA1;
+
+    		BAC6 : bus access bus_1 <-> humid_sensor.BA1;
+    		BAC7 : bus access bus_1 <-> temp_sensor.BA1; 
+    		BAC8 : bus access bus_1 <-> window.BA1;
+    		BAC9 : bus access bus_1 <-> termostat.BA1;  		
     	properties
-    		Allowed_Processor_Binding => (reference(rt_cpu1))
-    		applies to HA_control.updateValues;
-    		Allowed_Processor_Binding => (reference(rt_cpu1))
+    		-- Bind Process to CPUs
+    		Allowed_Processor_Binding => (reference(cpu1))
+    		applies to HA_control.UpdateValues;
+    		Allowed_Processor_Binding => (reference(cpu1))
     		applies to HA_control.algorithm;
+    		
     end HA.impl;
     
     -- Now, declare the virtual processors that model
 	-- partition runtime.
 	
 	-- Freq: 1 * 10^6 and First Come First Serve (Round Robin)
-	processor cpu1
+	processor cpu_1MHz
 		features
 			BA1: requires bus access bus1.realBus;
 		properties
@@ -38,48 +57,24 @@ public
 			Scheduling_Protocol => (Round_Robin_Protocol);
 	      	Thread_Swap_Execution_Time => 5 us.. 10 us; -- Dont know
 	      	Clock_Jitter => 5 ps; -- Dont know
-	end cpu1;
+	end cpu_1MHz;
 	
-	processor implementation cpu1.exp	
-	end cpu1.exp;
+	-- 5 CPUs with same specs
+	processor implementation cpu_1MHz.cpu1	
+	end cpu_1MHz.cpu1;
 	
+	processor implementation cpu_1MHz.cpu2		
+	end cpu_1MHz.cpu2;
+
+	processor implementation cpu_1MHz.cpu3	
+	end cpu_1MHz.cpu3;
 	
+	processor implementation cpu_1MHz.cpu4		
+	end cpu_1MHz.cpu4;
 	
-	processor cpu2
-		properties
-			Clock_Period => 1000ns;
-	    Scheduling_Protocol => (Round_Robin_Protocol);
-	    Thread_Swap_Execution_Time => 5 us.. 10 us;
-	    Clock_Jitter => 5 ps;
-	      
-	end cpu2;
+	processor implementation cpu_1MHz.cpu5	
+	end cpu_1MHz.cpu5;
 	
-	processor cpu3
-		properties
-			Clock_Period => 1000ns;
-	      Scheduling_Protocol => (Round_Robin_Protocol);
-	      Thread_Swap_Execution_Time => 5 us.. 10 us;
-	      Clock_Jitter => 5 ps;
-	      
-	end cpu3;
-	
-	processor cpu4
-		properties
-			Clock_Period => 1000ns;
-			Scheduling_Protocol => (Round_Robin_Protocol);
-	      	Thread_Swap_Execution_Time => 5 us.. 10 us;
-	      	Clock_Jitter => 5 ps;
-	      
-	end cpu4;
-	
-	processor cpu5
-		properties
-			Clock_Period => 1000ns;
-			Scheduling_Protocol => (Round_Robin_Protocol);
-	      	Thread_Swap_Execution_Time => 5 us.. 10 us;
-	      	Clock_Jitter => 5 ps;
-	      
-	end cpu5;
 	
 	--Bus
 	-- Freq: 1 * 10^3 and First Come First Serve (Round Robin)
@@ -107,6 +102,7 @@ public
 		subcomponents
 			updateValues: thread update_values.env;
 			algorithm: thread algorithm.ex;
+			
 	end hostController.PeriodicOp;	
 	-- Devices
 	
@@ -114,6 +110,7 @@ public
 	device sensor
 		features
 		sensor_data: out data port;
+		BA1: requires bus access bus1.realBus;
 	end sensor;
 	
 	device implementation sensor.temp
@@ -126,6 +123,8 @@ public
 	device actuator
 		features
 		cmd: in data port;
+		BA1: requires bus access bus1.realBus;
+		
 	end actuator;
 	
 	device implementation actuator.Termostat
@@ -140,7 +139,22 @@ public
 	
 	-- Threads
 	
-	thread HostController_PeriodicOp
+	thread algorithm
+	features
+    	windowCMD: out data port WinCMD;
+    	termostatCDM: in data port TermostatCMD;
+	properties
+	   Priority => 10;
+	   Period => 1000 ms;
+	   Compute_Execution_Time => 8 ms .. 10 ms;
+	   Deadline => 1000 ms; 
+	   Dispatch_Protocol => Periodic;
+	end algorithm;
+	
+	thread implementation   algorithm.ex
+	end                     algorithm.ex;
+	
+	thread update_values
 	features
     	Temp: in event data port Temperature;
     	Humid: in event data port Temperature;
@@ -150,10 +164,10 @@ public
 	   Compute_Execution_Time => 8 ms .. 10 ms;
 	   Deadline => 1000 ms; 
 	   Dispatch_Protocol => Periodic;
-	end HostController_PeriodicOp;
+	end update_values;
 	
-	thread implementation   HostController_PeriodicOp.impl
-	end                     HostController_PeriodicOp.impl;
+	thread implementation   update_values.env
+	end                     update_values.env;
 
 	-- 1*10^3 Cycles 
 	-- Period 1000 * 10^6
