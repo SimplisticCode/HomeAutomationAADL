@@ -6,46 +6,49 @@ public
     end HA;
 
     system implementation HA.impl
-        subcomponents
-            humid_sensor: process HumiditySensor.Step;
-            temp_sensor: process TempSensor.Step;
-            window: process Window.Step;
-            termostat: process Heater.Step;
-            HA_control: process hostController.PeriodicOp;      
-            cpu1 : processor cpu_1MHz.cpu1;
-            cpu2 : processor cpu_1MHz.cpu2;
-            cpu3 : processor cpu_1MHz.cpu3;
-            cpu4 : processor cpu_1MHz.cpu4;
-            cpu5 : processor cpu_1MHz.cpu5;       
-            
-    	connections
-    		DC1: port temp_sensor.tempValue -> HA_control.tempValue;
-    		DC2: port humid_sensor.humidValue -> HA_control.humidValue;    		
-    		DC3: port HA_control.windowCMD -> window.cmd;
-    		DC4: port HA_control.termostatCMD -> termostat.cmd;
-    		 		
-    	properties
-    		-- Bind Process to CPUs
-    		Allowed_Processor_Binding => (reference(cpu1))
+		subcomponents
+			humid_sensor: process HumiditySensor.Step;
+			temp_sensor: process TempSensor.Step;
+			window: process Window.Step;
+			termostat: process Heater.Step;
+			HA_control: process hostController.PeriodicOp;
+			cpu1: processor cpu_1MHz.cpu1;
+			cpu2: processor cpu_1MHz.cpu2;
+			cpu3: processor cpu_1MHz.cpu3;
+			cpu4: processor cpu_1MHz.cpu4;
+			cpu5: processor cpu_1MHz.cpu5;
+			
+			envir: process Envir.impl;
+			
+		connections
+			DC1: port temp_sensor.tempValue -> HA_control.tempValue;
+			DC2: port humid_sensor.humidValue -> HA_control.humidValue;
+			DC3: port HA_control.windowCmd -> window.cmd;
+			DC4: port HA_control.termostatCMD -> termostat.cmd;
+		
+	  		--DC5: port window.cmd -> envir.windowAct;
+	  		--DC6: port termostat.cmd -> envir.TermostatAct;
+	  		--DC7: port envir.humidity -> humid_sensor.inHumidValue ;
+	  		--DC8: port envir.temperatur -> temp_sensor.inTempValue ;
+			
+		properties
+				-- Bind Process to CPUs
+			Allowed_Processor_Binding => (reference (cpu1))
     		applies to HA_control.algorithm;
-    		
-			-- Bind Process to CPUs
-    		Allowed_Processor_Binding => (reference(cpu2))
+					-- Bind Process to CPUs
+			Allowed_Processor_Binding => (reference (cpu2))
     		applies to humid_sensor.update;
-    		
-    		-- Bind Process to CPUs
-    		Allowed_Processor_Binding => (reference(cpu3))
+					-- Bind Process to CPUs
+			Allowed_Processor_Binding => (reference (cpu3))
     		applies to temp_sensor.update;
-    		
-    		-- Bind Process to CPUs
-    		Allowed_Processor_Binding => (reference(cpu4))
+					-- Bind Process to CPUs
+			Allowed_Processor_Binding => (reference (cpu4))
     		applies to termostat.update;
-    		
-    		-- Bind Process to CPUs
-    		Allowed_Processor_Binding => (reference(cpu5))
+					-- Bind Process to CPUs
+			Allowed_Processor_Binding => (reference (cpu5))
     		applies to window.update;
-    		
-    end HA.impl;
+			Allowed_Processor_Binding => (reference (cpu1));
+	end HA.impl;
     
     -- Now, declare the virtual processors that model
 	-- partition runtime.
@@ -89,17 +92,28 @@ public
 	
 	process implementation hostController.PeriodicOp
 		subcomponents
-			algorithm: thread algorithm.ex;		
+			algorithm: thread algorithm.ex;				
 	end hostController.PeriodicOp;	
+	
+	process Envir
+		features
+	  		windowAct : in feature;  --abstract
+	  		TermostatAct : in feature;  --abstract
+	  		humidity : out feature;  --abstract
+	  		temperatur : out feature;  --abstract
+	end Envir;
+	
+	process implementation Envir.impl
+		subcomponents
+			algorithm: thread Environment.impl;		
+	end Envir.impl;	
 
-
-	process implementation HostController.HA		
-	end HostController.HA;
 	
 	-- Processes - sensors
 	process TempSensor
 		features			
 			tempValue: out data port Temperature;
+			inTempValue: in feature;
 	end TempSensor;
 	
 	process implementation TempSensor.Step
@@ -110,6 +124,8 @@ public
 	process HumiditySensor
 		features			
 			humidValue: out data port Humidity;
+			inHumidValue: in feature;
+			
 	end HumiditySensor;
 	
 	process implementation HumiditySensor.Step
@@ -119,9 +135,9 @@ public
 
 	-- Processes - actuators
 	process Heater
-		features			
-			tempValue: out data port Temperature;
-			cmd: in event data port TermostatCMD;	
+		features
+			cmd: in event data port TermostatCMD;
+			tempValue: out feature;
 	end Heater;
 	
 	process implementation Heater.Step
@@ -130,9 +146,9 @@ public
 	end Heater.Step;
 	
 	process Window
-		features			
-			tempValue: out data port Humidity;
-			cmd: in event data port WinCMD;	
+		features
+			cmd: in event data port WinCMD;
+			tempValue: out feature;
 	end Window;
 	
 	process implementation Window.Step
@@ -190,7 +206,7 @@ public
 	   Priority => 10;
 	   Period => 1000 ms;
 	   Compute_Execution_Time => 1ms .. 1ms;
-	   Deadline => 1000 ms; 
+	   --Deadline => 1000 ms; 
 	   Dispatch_Protocol => Periodic;
 	end TemperatureSensor_Step;
 	
@@ -234,16 +250,21 @@ public
 	-- No duration
 	-- Period 1000 * 10^6
 	-- Deadline same as Period
-	thread Environment_CreateSignal
-	properties
-	   Priority => 10;
-	   Compute_Execution_Time => 0ns .. 1ns;
-	   Deadline => 1000 ms; 
-	   Dispatch_Protocol => Sporadic;
-	end Environment_CreateSignal;
+	thread Environment
+		features
+	  		windowAct : in feature;  --abstract
+	  		TermostatAct : in feature;  --abstract
+	  		humidity : out feature;  --abstract
+	  		temperatur : out feature;  --abstract
+		properties
+		   Priority => 10;
+		   Compute_Execution_Time => 0ns .. 1ns;
+		   Deadline => 1000 ms; 
+		   Dispatch_Protocol => Sporadic;
+	end Environment;
 	
-	thread implementation   Environment_CreateSignal.impl
-	end                     Environment_CreateSignal.impl;
+	thread implementation   Environment.impl
+	end                     Environment.impl;
 	
 --data
 data WinCmd
