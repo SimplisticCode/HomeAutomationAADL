@@ -1,0 +1,12 @@
+base.package.name=HA
+bit.width=64
+c.src.directory=
+camkes.aux.src.dir=
+camkes.output.directory=/Users/simonthranehansen/Documents/GitHub/HomeAutomationAADL
+eclipse.preferences.version=1
+exclude.slang.impl=false
+hw=
+max.sequence.size=16
+max.string.size=256
+platform=JVM
+slang.output.directory=/Users/simonthranehansen/Documents/GitHub/HomeAutomationAADL

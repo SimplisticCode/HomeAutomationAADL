@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="ASCII"?>
+<diagram:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:diagram="http://osate.org/diagram" formatVersion="7">
+  <element uuid="ac640b04-c4e3-4ad2-9b71-b6b8e334eea6" manual="true">
+    <element uuid="f5f51b67-29d2-4c48-8d31-0785104620a3">
+      <element uuid="c036c1c5-4a74-4b6e-ac88-c1dbb943a965">
+        <bo>
+          <seg>tag</seg>
+          <seg>unidirectional</seg>
+        </bo>
+        <contentFilters/>
+      </element>
+      <bo>
+        <seg>connection</seg>
+        <seg>dc1</seg>
+      </bo>
+      <bendpoints>
+        <point x="311.0" y="322.0"/>
+        <point x="311.0" y="352.0"/>
+      </bendpoints>
+      <contentFilters/>
+    </element>
+    <element uuid="b697c691-19e9-474a-9d15-ea2f723f0b5f">
+      <element uuid="ecc70891-d6db-421b-a2fc-5a1fc4dd7042">
+        <bo>
+          <seg>tag</seg>
+          <seg>unidirectional</seg>
+        </bo>
+        <contentFilters/>
+      </element>
+      <bo>
+        <seg>connection</seg>
+        <seg>dc2</seg>
+      </bo>
+      <contentFilters/>
+    </element>
+    <element uuid="70cbceec-88b0-46d0-a2a0-fe0406ddc865">
+      <element uuid="87862e26-3844-4e0d-aec4-99e6c5d16026">
+        <bo>
+          <seg>tag</seg>
+          <seg>unidirectional</seg>
+        </bo>
+        <contentFilters/>
+      </element>
+      <bo>
+        <seg>connection</seg>
+        <seg>dc3</seg>
+      </bo>
+      <contentFilters/>
+    </element>
+    <element uuid="8845dd48-d858-48a0-bad0-cf5dfdf73f08">
+      <element uuid="f7e4c517-6846-4560-bb81-31f75ef87a51">
+        <bo>
+          <seg>tag</seg>
+          <seg>unidirectional</seg>
+        </bo>
+        <contentFilters/>
+      </element>
+      <bo>
+        <seg>connection</seg>
+        <seg>dc4</seg>
+      </bo>
+      <bendpoints>
+        <point x="710.0" y="385.0"/>
+        <point x="710.0" y="339.0"/>
+      </bendpoints>
+      <contentFilters/>
+    </element>
+    <element uuid="31302bdf-eb7f-4ddf-a028-3f4b6320593a">
+      <element uuid="452b9707-5a6e-4c52-9cd9-57ef96734933">
+        <bo>
+          <seg>tag</seg>
+          <seg>unidirectional</seg>
+        </bo>
+        <contentFilters/>
+      </element>
+      <bo>
+        <seg>connection</seg>
+        <seg>dc5</seg>
+      </bo>
+      <contentFilters/>
+    </element>
+    <element uuid="d3116f96-93d9-4b39-a24a-e551e51391b5">
+      <element uuid="9a531d00-82e0-4c73-9ed1-a2299acfe9b1">
+        <bo>
+          <seg>tag</seg>
+          <seg>unidirectional</seg>
+        </bo>
+        <contentFilters/>
+      </element>
+      <bo>
+        <seg>connection</seg>
+        <seg>dc6</seg>
+      </bo>
+      <contentFilters/>
+    </element>
+    <element uuid="14c08bc9-cb46-4ff2-8642-09639f4e118b" dockArea="left">
+      <bo>
+        <seg>feature</seg>
+        <seg>targethumid</seg>
+      </bo>
+      <position/>
+      <contentFilters/>
+    </element>
+    <element uuid="58f3240a-b639-4063-9785-67f38b67cdda" dockArea="left">
+      <bo>
+        <seg>feature</seg>
+        <seg>targettemp</seg>
+      </bo>
+      <position y="45.0"/>
+      <contentFilters/>
+    </element>
+    <element uuid="547e6445-9a5f-4420-b74a-d1496f5d8a17">
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>cpu1</seg>
+      </bo>
+      <position x="123.0" y="38.0"/>
+      <size width="91.0" height="35.0"/>
+      <contentFilters>
+        <filter>features</filter>
+        <filter>internalFeatures</filter>
+        <filter>processorFeatures</filter>
+        <filter>connections</filter>
+        <filter>flowSpecifications</filter>
+      </contentFilters>
+    </element>
+    <element uuid="6185a278-7f23-4b5a-880c-85f5dd07a104">
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>cpu2</seg>
+      </bo>
+      <position x="234.0" y="38.0"/>
+      <size width="91.0" height="35.0"/>
+      <contentFilters>
+        <filter>features</filter>
+        <filter>internalFeatures</filter>
+        <filter>processorFeatures</filter>
+        <filter>connections</filter>
+        <filter>flowSpecifications</filter>
+      </contentFilters>
+    </element>
+    <element uuid="80008691-97d7-4580-aec6-62cf26b1c75d">
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>cpu3</seg>
+      </bo>
+      <position x="345.0" y="38.0"/>
+      <size width="91.0" height="35.0"/>
+      <contentFilters>
+        <filter>features</filter>
+        <filter>internalFeatures</filter>
+        <filter>processorFeatures</filter>
+        <filter>connections</filter>
+        <filter>flowSpecifications</filter>
+      </contentFilters>
+    </element>
+    <element uuid="37d0a43b-8ff0-4369-b3dd-67b8896883c3">
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>cpu4</seg>
+      </bo>
+      <position x="456.0" y="38.0"/>
+      <size width="91.0" height="35.0"/>
+      <contentFilters>
+        <filter>features</filter>
+        <filter>internalFeatures</filter>
+        <filter>processorFeatures</filter>
+        <filter>connections</filter>
+        <filter>flowSpecifications</filter>
+      </contentFilters>
+    </element>
+    <element uuid="cb77fd9e-b9e8-4089-a7ac-8e5ef5eb353a">
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>cpu5</seg>
+      </bo>
+      <position x="12.0" y="38.0"/>
+      <size width="91.0" height="35.0"/>
+      <contentFilters>
+        <filter>features</filter>
+        <filter>internalFeatures</filter>
+        <filter>processorFeatures</filter>
+        <filter>connections</filter>
+        <filter>flowSpecifications</filter>
+      </contentFilters>
+    </element>
+    <element uuid="8fe86df8-ee17-44e6-a76c-db39d0e5b7c9">
+      <element uuid="8c924434-50d0-4fde-9a35-cb5d1fc8dfb7" dockArea="left">
+        <bo>
+          <seg>feature</seg>
+          <seg>humidvalue</seg>
+        </bo>
+        <position y="60.0"/>
+        <contentFilters/>
+      </element>
+      <element uuid="2a56ee95-208c-4f9d-8c89-4a33a426745e" dockArea="left">
+        <bo>
+          <seg>feature</seg>
+          <seg>set_targethumid</seg>
+        </bo>
+        <position y="160.0"/>
+        <contentFilters/>
+      </element>
+      <element uuid="3314ffd0-4100-45b9-ba52-c3fc4f126e1a" dockArea="left">
+        <bo>
+          <seg>feature</seg>
+          <seg>set_targettemp</seg>
+        </bo>
+        <position y="110.0"/>
+        <contentFilters/>
+      </element>
+      <element uuid="7df73651-a5db-4c8d-a18c-c01d8105ebdf" dockArea="left">
+        <bo>
+          <seg>feature</seg>
+          <seg>tempvalue</seg>
+        </bo>
+        <position y="10.0"/>
+        <contentFilters/>
+      </element>
+      <element uuid="4d795d3d-ea80-4eb2-b572-e92d2ed0f731" dockArea="right">
+        <bo>
+          <seg>feature</seg>
+          <seg>termostatcmd</seg>
+        </bo>
+        <position x="272.0" y="43.0"/>
+        <contentFilters/>
+      </element>
+      <element uuid="ce547f93-2732-473f-aaca-a7875434b006" dockArea="right">
+        <bo>
+          <seg>feature</seg>
+          <seg>windowcmd</seg>
+        </bo>
+        <position x="284.0" y="127.0"/>
+        <contentFilters/>
+      </element>
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>ha_control</seg>
+      </bo>
+      <position x="309.0" y="298.0"/>
+      <size width="379.0" height="210.0"/>
+      <contentFilters>
+        <filter>features</filter>
+        <filter>internalFeatures</filter>
+        <filter>processorFeatures</filter>
+        <filter>connections</filter>
+        <filter>flowSpecifications</filter>
+      </contentFilters>
+    </element>
+    <element uuid="7fcd1b8f-8af4-4b9b-879c-b2b7c1f76b6d">
+      <element uuid="7872704b-117a-4d4a-879d-9bfa19570c73" dockArea="left">
+        <bo>
+          <seg>feature</seg>
+          <seg>invalue</seg>
+        </bo>
+        <position y="10.0"/>
+        <contentFilters/>
+      </element>
+      <element uuid="e3ef4714-e302-441c-a62d-30846e8d56ff" dockArea="right">
+        <bo>
+          <seg>feature</seg>
+          <seg>value</seg>
+        </bo>
+        <position x="225.0" y="10.0"/>
+        <contentFilters/>
+      </element>
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>humid_sensor</seg>
+      </bo>
+      <position x="12.0" y="348.0"/>
+      <size width="277.0" height="60.0"/>
+      <contentFilters>
+        <filter>features</filter>
+        <filter>internalFeatures</filter>
+        <filter>processorFeatures</filter>
+        <filter>connections</filter>
+        <filter>flowSpecifications</filter>
+      </contentFilters>
+    </element>
+    <element uuid="280370db-af83-4b4f-afec-06f59d15dcda">
+      <element uuid="349bee7c-defd-4e06-bfda-e0234bb89d83" dockArea="left">
+        <bo>
+          <seg>feature</seg>
+          <seg>invalue</seg>
+        </bo>
+        <position y="10.0"/>
+        <contentFilters/>
+      </element>
+      <element uuid="03e61860-411c-4a55-a647-031321b41a22" dockArea="right">
+        <bo>
+          <seg>feature</seg>
+          <seg>value</seg>
+        </bo>
+        <position x="217.0" y="10.0"/>
+        <contentFilters/>
+      </element>
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>temp_sensor</seg>
+      </bo>
+      <position x="20.0" y="268.0"/>
+      <size width="269.0" height="60.0"/>
+      <contentFilters>
+        <filter>features</filter>
+        <filter>internalFeatures</filter>
+        <filter>processorFeatures</filter>
+        <filter>connections</filter>
+        <filter>flowSpecifications</filter>
+      </contentFilters>
+    </element>
+    <element uuid="ca357b1b-312e-465b-a1fe-de5c2cfb779a">
+      <element uuid="234bba92-a765-4f8f-95bf-9c39952a7db5" dockArea="left">
+        <bo>
+          <seg>feature</seg>
+          <seg>cmd</seg>
+        </bo>
+        <position y="10.0"/>
+        <contentFilters/>
+      </element>
+      <element uuid="9fbd8672-8295-4c3e-8024-870821c1d33d" dockArea="left">
+        <bo>
+          <seg>feature</seg>
+          <seg>tempvalue</seg>
+        </bo>
+        <position y="60.0"/>
+        <contentFilters/>
+      </element>
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>termostat</seg>
+      </bo>
+      <position x="708.0" y="285.0"/>
+      <size width="288.0" height="110.0"/>
+      <contentFilters>
+        <filter>features</filter>
+        <filter>internalFeatures</filter>
+        <filter>processorFeatures</filter>
+        <filter>connections</filter>
+        <filter>flowSpecifications</filter>
+      </contentFilters>
+    </element>
+    <element uuid="6e5b5e72-4c89-4296-887a-086f8283ce71">
+      <element uuid="08d3e45c-da19-4182-95e7-12e0ef7407a4" dockArea="left">
+        <bo>
+          <seg>feature</seg>
+          <seg>cmd</seg>
+        </bo>
+        <position y="10.0"/>
+        <contentFilters/>
+      </element>
+      <element uuid="3cfe96fa-234c-46f4-9f53-670c78b7bf89" dockArea="left">
+        <bo>
+          <seg>feature</seg>
+          <seg>tempvalue</seg>
+        </bo>
+        <position y="60.0"/>
+        <contentFilters/>
+      </element>
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>window</seg>
+      </bo>
+      <position x="708.0" y="415.0"/>
+      <size width="276.0" height="110.0"/>
+      <contentFilters>
+        <filter>features</filter>
+        <filter>internalFeatures</filter>
+        <filter>processorFeatures</filter>
+        <filter>connections</filter>
+        <filter>flowSpecifications</filter>
+      </contentFilters>
+    </element>
+    <bo>
+      <seg>classifier</seg>
+      <seg>ha.impl</seg>
+    </bo>
+    <position x="12.0" y="12.0"/>
+    <size width="1008.0" height="537.0"/>
+    <contentFilters>
+      <filter>features</filter>
+      <filter>internalFeatures</filter>
+      <filter>processorFeatures</filter>
+      <filter>connections</filter>
+      <filter>flowSpecifications</filter>
+      <filter>subcomponents</filter>
+    </contentFilters>
+  </element>
+  <config type="structure" connectionPrimaryLabelsVisible="false">
+    <enabledAadlProperties/>
+    <context>
+      <seg>classifier</seg>
+      <seg>homeautomation::ha.impl</seg>
+    </context>
+  </config>
+</diagram:Diagram>

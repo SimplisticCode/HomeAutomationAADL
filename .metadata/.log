@@ -1,0 +1,102 @@
+!SESSION 2019-11-14 14:35:21.362 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_231
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=da_DK
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.egit.ui 2 0 2019-11-14 14:39:31.921
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Simon Thrane Hansen'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY Adventium Labs AADL Tools 1 0 2019-11-14 14:39:33.952
+!MESSAGE Listing installed packages, use -Dadventium.verbose to list all
+SymbolicName, Version
+org.osate.aadl2, 1.0.0.v20181012-1423
+org.osate.aadl2.edit, 1.0.0.v20181012-1423
+org.osate.aadl2.errormodel.analysis, 1.0.0.v20180702-1608
+org.osate.aadl2.errormodel.contrib, 1.0.0.v20180413-1406
+org.osate.aadl2.errormodel.faulttree, 1.0.0.v20181011-1558
+org.osate.aadl2.errormodel.faulttree.design, 1.0.0.v20181011-1541
+org.osate.aadl2.errormodel.faulttree.edit, 1.0.0.v20181011-1558
+org.osate.aadl2.errormodel.faulttree.generation, 1.0.0.v20181011-1556
+org.osate.aadl2.errormodel.help, 1.0.0.v20181012-1945
+org.osate.aadl2.errormodel.propagationgraph, 1.0.0.v20181016-0310
+org.osate.aadl2.instance.textual, 1.0.0.v20181024-1846
+org.osate.aadl2.instance.textual.ui, 1.0.0.v20181024-1846
+org.osate.aadl2.instance.ui, 1.0.0.v20180511-1311
+org.osate.aadl2.instantiation, 1.0.0.v20181024-1609
+org.osate.aadl2.model.editor, 1.0.0.v20180809-1604
+org.osate.aadl2.modelsupport, 1.0.0.v20181001-2033
+org.osate.alisa.common, 1.0.0.v20180912-1810
+org.osate.alisa.common.ui, 1.0.0.v20180511-1311
+org.osate.alisa.help, 1.0.0.v20181026-1440
+org.osate.alisa.workbench, 1.0.0.v20180830-1928
+org.osate.alisa.workbench.ui, 1.0.0.v20181011-1514
+org.osate.analysis.architecture, 1.0.0.v20180913-1436
+org.osate.analysis.binpacking, 1.0.0.v20180511-1311
+org.osate.analysis.flows, 1.0.0.v20181003-1830
+org.osate.analysis.resource.budgets, 1.0.0.v20180917-1822
+org.osate.analysis.resource.management, 1.0.0.v20180911-1811
+org.osate.analysis.security, 1.0.0.v20181001-1921
+org.osate.annexsupport, 1.0.0.v20181001-2033
+org.osate.assure, 1.0.0.v20181026-1441
+org.osate.ba, 1.0.0.v20180511-1311
+org.osate.ba.contrib, 1.0.0.v20180511-1311
+org.osate.ba.edit, 1.0.0.v20180511-1311
+org.osate.branding, 1.0.0.v20180511-1311
+org.osate.categories, 1.0.0.v20180830-1928
+org.osate.categories.ui, 1.0.0.v20180511-1311
+org.osate.codegen.checker, 1.0.0.v20180511-1311
+org.osate.contribution.sei, 1.0.0.v20180511-1311
+org.osate.core, 1.0.0.v20181003-2116
+org.osate.discovery, 1.0.0.v20180511-1311
+org.osate.ge, 1.0.0.v20181109-1741
+org.osate.ge.diagram, 1.0.0.v20181005-1859
+org.osate.ge.doc, 1.0.0.v20181005-1859
+org.osate.help, 1.0.0.v20180816-1801
+org.osate.importer, 1.0.0.v20180511-1311
+org.osate.importer.simulink, 1.0.0.v20180511-1311
+org.osate.ocarina, 0.0.1.v20180511-1708
+org.osate.ocarina.aadlcontribution, 0.0.1.v20180511-1708
+org.osate.ocarina.help, 0.1.1.v20170720-1935
+org.osate.organization, 1.0.0.v20180724-2122
+org.osate.organization.ui, 1.0.0.v20180511-1311
+org.osate.pluginsupport, 1.0.0.v20181026-1440
+org.osate.reqspec, 1.0.0.v20180912-1810
+org.osate.reqspec.ui, 1.0.0.v20180816-1442
+org.osate.reqtrace, 1.0.0.v20180511-1311
+org.osate.resolute.help, 2.3.6.vfinal
+org.osate.results, 1.0.0.v20181017-1722
+org.osate.ui, 1.0.0.v20181031-1740
+org.osate.utils, 1.0.0.v20180511-1311
+org.osate.verify, 1.0.0.v20181026-1441
+org.osate.verify.ui, 1.0.0.v20181026-1438
+org.osate.workspace, 1.0.0.v20180511-1311
+org.osate.xtext.aadl2, 1.0.0.v20181030-2127
+org.osate.xtext.aadl2.errormodel, 1.0.0.v20180816-2001
+org.osate.xtext.aadl2.errormodel.ui, 1.0.0.v20181004-1434
+org.osate.xtext.aadl2.properties, 1.0.0.v20181018-1439
+org.osate.xtext.aadl2.properties.ui, 1.0.0.v20181018-1439
+org.osate.xtext.aadl2.ui, 1.0.0.v20181016-1405
+com.adventiumlabs.aadltools, 0.14.0.201910291643
+com.adventiumlabs.aadltools.exchange, 0.14.0.201910291643
+com.adventiumlabs.aadltools.fastar, 0.14.0.201910291643
+com.adventiumlabs.aadltools.fastar.plugin, 0.14.0.201910291643
+com.adventiumlabs.aadltools.fastar.plugin.extras, 0.14.0.201910291643
+com.adventiumlabs.aadltools.fastar.plugin.help, 0.14.0.201910291643
+com.adventiumlabs.aadltools.fastar.plugin.mast, 0.14.0.201910291643
+com.adventiumlabs.aadltools.fastar.plugin.spica, 0.14.0.201910291643
+com.adventiumlabs.aadltools.fastar.spica, 0.14.0.201910291643
+com.adventiumlabs.aadltools.open.exchange, 0.14.0.201910291643
+com.adventiumlabs.aadltools.plugin, 0.14.0.201910291643
+com.adventiumlabs.aadltools.plugin.extras, 0.14.0.201910291643
+com.adventiumlabs.aadltools.reportgen.plugin.help, 0.14.0.201910291643
+com.adventiumlabs.aadltools.spica.plugin.help, 0.14.0.201910291643
+com.adventiumlabs.aadltools.visualization, 0.14.0.201910291643
+com.adventiumlabs.aadltools.visualization.plugin, 0.14.0.201910291643
+
+!STACK 0

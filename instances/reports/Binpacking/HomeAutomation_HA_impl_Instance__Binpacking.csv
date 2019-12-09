@@ -1,0 +1,15 @@
+Bind threads to processors Report
+
+Binpacker Analysis Report
+
+Warning! Thread window.update is missing period property. Using default of 1 ns
+Warning! Thread termostat.update is missing period property. Using default of 1 ns
+Warning! Thread envir.algorithm is missing period property. Using default of 1 ns
+Warning! Data size of connection source port humid_sensor.humidValue not specified
+Warning! Data size of connection source port temp_sensor.tempValue not specified
+Warning! Data size of connection source port HA_control.windowCmd not specified
+Warning! Data size of connection source port HA_control.termostatCMD not specified
+
+Binpacking results: FAILED
+
+Thread to Processor Bindings

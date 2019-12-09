@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ASCII"?>
+<diagram:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:diagram="http://osate.org/diagram" formatVersion="7">
+  <element uuid="c1a150c6-c342-428c-b1c1-778c9571eadd" manual="true">
+    <bo>
+      <seg>package</seg>
+      <seg>homeautomation</seg>
+    </bo>
+    <contentFilters>
+      <filter>classifiers</filter>
+    </contentFilters>
+  </element>
+  <config type="package" connectionPrimaryLabelsVisible="false">
+    <enabledAadlProperties/>
+    <context>
+      <seg>package</seg>
+      <seg>homeautomation</seg>
+    </context>
+  </config>
+</diagram:Diagram>
