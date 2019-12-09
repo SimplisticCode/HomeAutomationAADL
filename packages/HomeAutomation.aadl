@@ -36,19 +36,19 @@ public
 		properties
 				-- Bind Process to CPUs
 			Actual_Processor_Binding => (reference (cpu1))
-    		applies to HA_control.algorithm;
+    		applies to HA_control;
 					-- Bind Process to CPUs
 			Actual_Processor_Binding => (reference (cpu2))
-    		applies to humid_sensor.update;
+    		applies to humid_sensor;
 					-- Bind Process to CPUs
 			Actual_Processor_Binding => (reference (cpu3))
-    		applies to temp_sensor.update;
+    		applies to temp_sensor;
 					-- Bind Process to CPUs
 			Actual_Processor_Binding => (reference (cpu4))
-    		applies to termostat.update;
+    		applies to termostat;
 					-- Bind Process to CPUs
 			Actual_Processor_Binding => (reference (cpu5))
-    		applies to window.update;
+    		applies to window;
 	end HA.impl;
 
 		-- Now, declare the virtual processors that model
